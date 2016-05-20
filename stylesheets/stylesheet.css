@@ -67,7 +67,7 @@ a {
   .page-header {
     padding: 5rem 6rem; } }
 
-@media screen and (min-width: 42em) and (max-width: 64em) {
+@media screen and (min-width: 42em) and (max-width: 45em) {
   .page-header {
     padding: 3rem 4rem; } }
 
@@ -83,7 +83,7 @@ a {
   .project-name {
     font-size: 3.25rem; } }
 
-@media screen and (min-width: 42em) and (max-width: 64em) {
+@media screen and (min-width: 42em) and (max-width: 45em) {
   .project-name {
     font-size: 2.25rem; } }
 
@@ -100,7 +100,7 @@ a {
   .project-tagline {
     font-size: 1.25rem; } }
 
-@media screen and (min-width: 42em) and (max-width: 64em) {
+@media screen and (min-width: 42em) and (max-width: 45em) {
   .project-tagline {
     font-size: 1.15rem; } }
 
