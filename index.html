@@ -53,9 +53,11 @@
 </section>
 
 <script id="notice" type="text/html">
-    {{#rows}}
-        {{notice}}<br>
-    {{/rows}}
+    <ul>
+        {{#rows}}
+        <li>{{notice}}</li>
+        {{/rows}}
+    </ul>
 </script>
 
 <script id="members_template" type="text/html">
