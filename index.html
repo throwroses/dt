@@ -31,7 +31,7 @@
 <section class="main-content">
     <h3><a id="intro" class="anchor" href="#intro" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Darts Together - 다트 투게더</h3>
 
-    <p>
+    <p id="dt">
         안녕하세요.^^ 다트투게더 [D.T] 모임장 김진수입니다.<br>
         <br>
         ● 저희모임은 절대 철새를 거부합니다.<br>
@@ -117,14 +117,14 @@
 
 <script id="members_template" type="text/html">
     <table>
+        {{#rows}}
         <tr>
-            {{#rows}}
             <td>
-                <img src="{{photo-url}}"/><br>
+                <img src="{{photo-url}}" height="150px;"/><br>
                 {{nickname}}
             </td>
-            {{/rows}}
         </tr>
+        {{/rows}}
     </table>
 </script>
 
