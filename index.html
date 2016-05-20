@@ -118,7 +118,7 @@
 <script id="members_template" type="text/html">
   <table>
       {{#rows}}
-        <tr style="height: 50px;">
+        <tr>
             <td>
                 <img src="{{photo-url}}"/><br>
                 {{nickname}}
@@ -137,21 +137,35 @@
 </script>
 
 <script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-//    var URL = "0Ao5u1U6KYND7dGN5QngweVJUWE16bTRob0d2a3dCbnc";
-    var URL = "1sZpEZdgQNw-J_YroXswf0_o0tvXEo4DHq9cF2hGW3AY";
-    Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
-  });
+    document.addEventListener('DOMContentLoaded', function () {
+        var URL = "1sZpEZdgQNw-J_YroXswf0_o0tvXEo4DHq9cF2hGW3AY";
+        Tabletop.init({
+                    key: URL,
+                    callback: function (data) {
+                        var tableOptions = {
+                            "data": data
+                            , "pagination": 900, "tableDiv": "#members", "filterDiv": "#memberFilter"
+                        };
+                        Sheetsee.makeTable(tableOptions);
+                        Sheetsee.initiateTableFilter(tableOptions);
+                    },
+                    simpleSheet: true
+                }
+        )
+    });
 
-  function showInfo(data) {
-    var tableOptions = {"data": data
-    , "pagination": 10, "tableDiv": "#members", "filterDiv": "#memberFilter"};
-    Sheetsee.makeTable(tableOptions);
-    Sheetsee.initiateTableFilter(tableOptions);
-
-    var html = Sheetsee.ich.homeshopList({'rows': data});
-    $('#homeshopList').html(html)
-  }
+    document.addEventListener('DOMContentLoaded', function () {
+        var URL = "1_drV4isLwnBujWHj9bvP_5NCReBlOw-1o55V-Nsjw4E";
+        Tabletop.init({
+                    key: URL,
+                    callback: function (data) {
+                        var html = Sheetsee.ich.homeshopList({'rows': data});
+                        $('#homeshopList').html(html)
+                    },
+                    simpleSheet: true
+                }
+        )
+    });
 </script>
 
 </body>
