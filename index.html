@@ -31,9 +31,7 @@
 <section class="main-content">
     <h3><a id="intro" class="anchor" href="#intro" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Darts Together - 다트 투게더</h3>
 
-    <p id="notice">
-
-    </p>
+    <p id="notice"></p>
 
     <h3><a id="searchMember" class="anchor" href="#searchMember" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>정회원 목록</h3>
 
@@ -55,11 +53,9 @@
 </section>
 
 <script id="notice" type="text/html">
-    <ul>
-        {{#rows}}
-        <li>{{notice}}</li>
-        {{/rows}}
-    </ul>
+    {{#rows}}
+        {{notice}}<br>
+    {{/rows}}
 </script>
 
 <script id="members_template" type="text/html">
