@@ -57,9 +57,9 @@ a {
   color: #fff;
   text-align: center;
   background-color: #000000;
-  background-image: url(/img/dtlogo.jpg);
+  background-image: url(/img/dtlogo.png);
   background-repeat: no-repeat;
-  background-position:center bottom;
+  background-position:top;
 
 }
 
