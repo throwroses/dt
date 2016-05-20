@@ -59,7 +59,8 @@ a {
   background-color: #000000;
   background-image: url(/img/dtlogo.jpg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position:center bottom;
+
 }
 
 @media screen and (min-width: 64em) {
