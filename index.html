@@ -116,24 +116,24 @@
 </section>
 
 <script id="members_template" type="text/html">
-  <table>
-      {{#rows}}
+    <table>
         <tr>
+            {{#rows}}
             <td>
                 <img src="{{photo-url}}"/><br>
                 {{nickname}}
             </td>
+            {{/rows}}
         </tr>
-      {{/rows}}
-  </table>
+    </table>
 </script>
 
 <script id="homeshopList" type="text/html">
-  <ul>
-      {{#rows}}
+    <ul>
+        {{#rows}}
         <li>{{homeshop}}</li>
-      {{/rows}}
-  </ul>
+        {{/rows}}
+    </ul>
 </script>
 
 <script type="text/javascript">
