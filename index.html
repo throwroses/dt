@@ -89,6 +89,8 @@
     <h3><a id="searchMember" class="anchor" href="#searchMember" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>정회원 목록</h3>
 
     <p>
+        <input id="memberFilter" type="text" placeholder="[D.T] 홍길동"/>
+        <div id="members"></div>
         We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will
         be preserved.
     </p>
@@ -110,27 +112,38 @@
     </footer>
 
 </section>
+
+<script id="members_template" type="text/html">
+  <table>
+      {{#rows}}
+        <tr><td>{{photo-url}}</td><td>{{nickname}}</td></tr>
+      {{/rows}}
+  </table>
+</script>
+
+<script id="homeshopList" type="text/html">
+  <ul>
+      {{#rows}}
+        <li>{{homeshop}}</li>
+      {{/rows}}
+  </ul>
+</script>
+
 <script type="text/javascript">
   document.addEventListener('DOMContentLoaded', function() {
-    var URL = "0Ao5u1U6KYND7dGN5QngweVJUWE16bTRob0d2a3dCbnc";
+//    var URL = "0Ao5u1U6KYND7dGN5QngweVJUWE16bTRob0d2a3dCbnc";
+    var URL = "1sZpEZdgQNw-J_YroXswf0_o0tvXEo4DHq9cF2hGW3AY";
     Tabletop.init( { key: URL, callback: showInfo, simpleSheet: true } )
   });
 
   function showInfo(data) {
     var tableOptions = {"data": data
-    , "pagination": 10, "tableDiv": "#fullTable", "filterDiv": "#fullTableFilter"};
+    , "pagination": 10, "tableDiv": "#members", "filterDiv": "#memberFilter"};
     Sheetsee.makeTable(tableOptions);
     Sheetsee.initiateTableFilter(tableOptions);
-    var california = Sheetsee.getKeyword(data, "california");
-    var calOptions = { "data": california,
-                       "pagination": 5,
-                       "tableDiv": "#calTable",
-                       "filterDiv": "#calFilter"
-                     };
-    Sheetsee.makeTable(calOptions);
-    Sheetsee.initiateTableFilter(calOptions);
-    var html = Sheetsee.ich.photogrid({'rows': data});
-    $('#photogrid').html(html)
+
+    var html = Sheetsee.ich.homeshopList({'rows': data});
+    $('#homeshopList').html(html)
   }
 </script>
 
