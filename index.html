@@ -10,6 +10,52 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <style>
+        #Pagination {
+            border-top: 4px solid #CCF4FF;
+            margin: 10px 0px;
+            padding-top: 10px;
+            display: inline-block;
+        }
+
+        #Pagination a {
+            cursor: pointer;
+        }
+
+        .no-pag {
+            color: #acacac;
+            border: none;
+        }
+
+        .no-pag:hover {
+            color: #acacac;
+        }
+
+        input {
+            border: none;
+            border-bottom: 1px solid #333;
+            margin: 10px 0px;
+            width: 200px;
+            font-size: 16px;
+            padding-bottom: 6px;
+        }
+
+        .tHeader {
+            padding: 8px;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .photo {
+            display: inline-block;
+            float: left;
+            width: 100px;
+        }
+
+        #photogrid {
+            overflow: auto;
+        }
+    </style>
 </head>
 <body>
 <section class="page-header">
@@ -89,7 +135,7 @@
     <h3><a id="searchMember" class="anchor" href="#searchMember" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>정회원 목록</h3>
 
     <p>
-        <input id="memberFilter" type="text" placeholder="[D.T] 홍길동"/>
+        <input id="memberFilter" type="text" placeholder="검색"/>
         <div id="members"></div>
     </p>
 
@@ -108,7 +154,7 @@
 <script id="members_template" type="text/html">
   <table>
       {{#rows}}
-        <tr><td height="100px;"><img src="{{photo-url}}"/></td><td>{{nickname}}</td></tr>
+        <tr><td height="50px;"><img src="{{photo-url}}"/></td><td>{{nickname}}</td></tr>
       {{/rows}}
   </table>
 </script>
