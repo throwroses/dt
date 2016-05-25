@@ -29,24 +29,26 @@
 <body>
 <section class="page-header">
     <a href="#intro" class="btn" style="margin-top:20%;">Darts Together 소개</a>
+    <a href="#searchMember" class="btn">스폰서</a>
     <a href="#searchMember" class="btn">정회원</a>
-    <a href="#homeshop" class="btn">활동 홈샵</a>
+    <a href="#homeshop" class="btn">홈샵</a>
 </section>
 
 <section class="main-content">
     <h3><a id="intro" class="anchor" href="#intro" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Darts Together - 다트 투게더</h3>
-
     <p id="notice"></p>
 
-    <h3><a id="searchMember" class="anchor" href="#searchMember" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>정회원 목록</h3>
+    <h3><a id="sponsor" class="anchor" href="#sponsor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>다트 투게더 스폰서</h3>
+    <p id="splist" style="vertical-align: middle;"></p>
 
+    <h3><a id="searchMember" class="anchor" href="#searchMember" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>다트 투게더 정회원</h3>
     <p>
         <input id="memberFilter" type="text" placeholder="검색"/>
         <div id="members" style="overflow: hidden;"></div>
     </p>
 
 
-    <h3><a id="homeshop" class="anchor" href="#homeshop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>활동 홈샵</h3>
+    <h3><a id="homeshop" class="anchor" href="#homeshop" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>다트 투게더 홈샵</h3>
 
     <p id="homeshopList">
     </p>
@@ -81,6 +83,12 @@
         <li>{{homeshop}} <a href="{{map-url}}">[지도]</a></li>
         {{/rows}}
     </ul>
+</script>
+
+<script id="splist" type="text/html">
+    {{#rows}}
+        <a href="{{sponsor-url}}"><img src="{{sponsor-banner-url}}" style="max-height: 150px;"/></a>
+    {{/rows}}
 </script>
 
 <script type="text/javascript">
@@ -121,6 +129,19 @@
                     callback: function (data) {
                         var html = Sheetsee.ich.homeshopList({'rows': data});
                         $('#homeshopList').html(html)
+                    },
+                    simpleSheet: true
+                }
+        )
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var URL = "1-iF7ZUhvsetsGudtWIq_qZZhK1pUGLb9VgTfaDg_8NQ";
+        Tabletop.init({
+                    key: URL,
+                    callback: function (data) {
+                        var html = Sheetsee.ich.splist({'rows': data});
+                        $('#splist').html(html)
                     },
                     simpleSheet: true
                 }
