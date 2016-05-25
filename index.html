@@ -19,6 +19,11 @@
             font-size: 16px;
             padding-bottom: 6px;
         }
+
+        .member {
+            float: left;
+            margin: 0 0 20px 20px;
+        }
     </style>
 </head>
 <body>
@@ -37,7 +42,7 @@
 
     <p>
         <input id="memberFilter" type="text" placeholder="검색"/>
-        <div id="members"></div>
+        <div id="members" style="overflow: hidden;"></div>
     </p>
 
 
@@ -61,15 +66,12 @@
 </script>
 
 <script id="members_template" type="text/html">
-    <table>
-        {{#rows}}
-        <tr>
-            <td>
-                <img src="{{photo-url}}" height="150px;"/><br>
-                {{nickname}}
-            </td>
-        </tr>
-        {{/rows}}
+    {{#rows}}
+        <div class="member">
+            <img src="{{photo-url}}" height="150px;" style="overflow: hidden;"/><br>
+            {{nickname}}
+        </div>
+    {{/rows}}
     </table>
 </script>
 
@@ -102,7 +104,7 @@
                     callback: function (data) {
                         var tableOptions = {
                             "data": data
-                            , "pagination": 900, "tableDiv": "#members", "filterDiv": "#memberFilter"
+                            , "pagination": 999, "tableDiv": "#members", "filterDiv": "#memberFilter"
                         };
                         Sheetsee.makeTable(tableOptions);
                         Sheetsee.initiateTableFilter(tableOptions);
